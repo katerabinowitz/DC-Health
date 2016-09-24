@@ -1,4 +1,4 @@
-setwd("/Users/katerabinowitz/Documents/DataLensDC/DC-Health")
+setwd("/Users/katerabinowitz/Documents/DataLensDC/DC-Health/Urgent Care + Pharmacies")
 library(rgdal)
 library(tidyr)
 library(dplyr)
@@ -45,7 +45,7 @@ hosp$type<-rep("hospital",7)
 ### Urgent care clinics not covered on OpenDataDC ###
 #this dataset was scraped from https://www.urgentcarelocations.com/
 #it was a good starting point, but required filtering and updates 
-ucc<-read.csv("clinicLoc.csv",fill = FALSE, strip.white = TRUE,stringsAsFactors=FALSE)[c(2)]
+ucc<-read.csv("clinicLocRaw.csv",fill = FALSE, strip.white = TRUE,stringsAsFactors=FALSE)[c(2)]
 
 ucc<-separate(ucc,uc,c("name","address"),sep=" - ")
 ucc$name<-gsub("\n","",ucc$name)
@@ -85,4 +85,4 @@ uc<-cbind(uc,ucWard)
 uc$type2<-ifelse(uc$type!="hospital","urgentCare","hospital")
 table(uc$WARD_ID, uc$type2)
 
-qmplot(lon, lat, data = uc, colour = type2, size = I(3), darken = .3)
+write.csv(uc,"urgentCare.csv",row.names=FALSE)
