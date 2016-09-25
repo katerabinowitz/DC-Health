@@ -26,7 +26,7 @@ colnames(healthClinic)<-c("name","address","lon","lat")
 ### I checked the websites and called clinics to verify that they accepted walk-ins; 
 ### only 3 do (that are not also hospitals which I pull in the next round)
 healthClinic<-filter(healthClinic,grepl("Minnesota|Brentwood|Upper Cardozo",name))
-healthClinic$type<-rep("clinic",3)
+healthClinic$type<-rep("Community Health\nCenter Walk-In",3)
 
 ### Read in Hospital data from OpenDataDC ###
 ### Read in Hospital data from OpenDataDC ###
@@ -67,7 +67,7 @@ uccAdd<-geocode(ucc$address)
 ucc<-cbind(ucc,uccAdd)
 ucc$address<-gsub("\\,.*","",ucc$address)
 
-ucc$type<-ifelse(grepl("Walgreens|MinuteClinic",ucc$name),"pharmacy clinic","clinic")
+ucc$type<-ifelse(grepl("Walgreens|MinuteClinic",ucc$name),"Retail Clinic","Urgent Care Clinic")
 
 ### All Together Now ###
 ### All Together Now ###
@@ -82,7 +82,6 @@ ucWard <- over(addAll, ward)[c(4)]
 
 uc<-cbind(uc,ucWard)
 
-uc$type2<-ifelse(uc$type!="hospital","urgentCare","hospital")
-table(uc$WARD_ID, uc$type2)
+table(uc$WARD_ID, uc$type)
 
 write.csv(uc,"urgentCare.csv",row.names=FALSE)
