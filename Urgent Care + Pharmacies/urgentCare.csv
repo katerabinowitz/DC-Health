@@ -1,5 +1,17 @@
 "name","address","lon","lat","type","WARD_ID"
+"Unity - Walker Jones Health Center","40 PATTERSON STREET NE",-77.0076747835,38.9066587513,"Community Health
+Center Walk-In","6"
+"Unity - Anacostia Health Center","1500 GALEN STREET SE",-76.9835662366,38.8631088872,"Community Health
+Center Walk-In","8"
+"Unity - Stanton Road Health Center","3240 STANTON ROAD SE",-76.9806472919,38.8492753663,"Community Health
+Center Walk-In","8"
+"Unity - Southwest  Health Center","850 DELAWARE AVENUE SW",-77.012428534,38.8795424238,"Community Health
+Center Walk-In","6"
+"Unity - East of the River Health Center","123 45TH STREET NE",-76.9375118612,38.8911721402,"Community Health
+Center Walk-In","7"
 "Unity - Upper Cardozo Health Center","3020 14TH STREET NW",-77.0330325452,38.9281774913,"Community Health
+Center Walk-In","1"
+"Unity - Columbia Road Health Center","1660 COLUMBIA ROAD NW",-77.0388127052,38.9248983086,"Community Health
 Center Walk-In","1"
 "Unity - Minnesota Avenue Health Center","3924 MINNESOTA AVENUE NE",-76.9513084452,38.8939309441,"Community Health
 Center Walk-In","7"
@@ -21,7 +33,6 @@ Center Walk-In","5"
 "MedStar PromptCare","228 7th St.",-76.9958369,38.8864495,"Urgent Care Clinic","6"
 "MedStar PromptCare","1805 Columbia Rd.",-77.043139,38.9226296,"Urgent Care Clinic","1"
 "Metro Immediate & Primary Care","220 L St. NE",-77.0026323,38.9039411,"Urgent Care Clinic","6"
-"Metropolitan Walk-In Center","6323 Georgia Ave. NW",-77.0270647,38.9669065,"Urgent Care Clinic","4"
 "MinuteClinic","320 40th Street Northeast",-76.9477347,38.8935014,"Retail Clinic","7"
 "MinuteClinic","4555 Wisconsin Avenue NW",-77.0802897,38.9492999,"Retail Clinic","3"
 "MinuteClinic","4859 MacArthur Blvd NW",-77.0954963,38.9167095,"Retail Clinic","3"

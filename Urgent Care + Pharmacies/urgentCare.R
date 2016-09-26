@@ -23,10 +23,10 @@ healthClinic<-healthClinic[c(2:3,128:129)]
 colnames(healthClinic)<-c("name","address","lon","lat")
 
 #remove clinics that are not walk ins
-### I checked the websites and called clinics to verify that they accepted walk-ins; 
-### only 3 do (that are not also hospitals which I pull in the next round)
-healthClinic<-filter(healthClinic,grepl("Minnesota|Brentwood|Upper Cardozo",name))
-healthClinic$type<-rep("Community Health\nCenter Walk-In",3)
+### called clinics to verify; Unity centers seem to have some level of walk in depending on location  
+### remove those co-located in hospital, since hospital locations are pulled in the next round
+healthClinic<-filter(healthClinic,grepl("Unity",name))
+healthClinic$type<-rep("Community Health\nCenter Walk-In",9)
 
 ### Read in Hospital data from OpenDataDC ###
 ### Read in Hospital data from OpenDataDC ###
@@ -51,7 +51,7 @@ ucc<-separate(ucc,uc,c("name","address"),sep=" - ")
 ucc$name<-gsub("\n","",ucc$name)
 
 #remove clinics that do not accept walk ins or are closed
-ucc<-filter(ucc,!(name %in% c("A Doc At Your Door","Ivan L. Robinson Urgent Care","K Street Medical Care"))
+ucc<-filter(ucc,!(name %in% c("A Doc At Your Door","Ivan L. Robinson Urgent Care","K Street Medical Care","Metropolitan Walk-In Center"))
                   & address !="4225 Connecticut Ave, Washington, DC 20008")
 
 #add urgent care clinics that have opened since list
@@ -82,6 +82,6 @@ ucWard <- over(addAll, ward)[c(4)]
 
 uc<-cbind(uc,ucWard)
 
-table(uc$WARD_ID, uc$type)
+table(uc$WARD_ID,uc$type)
 
 write.csv(uc,"urgentCare.csv",row.names=FALSE)
