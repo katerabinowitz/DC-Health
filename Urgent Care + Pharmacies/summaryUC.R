@@ -51,7 +51,7 @@ ggplot(data = ucpSum, aes(x = ward, y = pharmacyVaccine)) +
   scale_x_discrete(expand=c(0,0)) +
   theme(axis.text.x = element_text()) +
   theme(axis.text.y = element_text()) +
-  theme(plot.background = element_rect(fill = '#EFF0F1'))+
+  theme(plot.background = element_rect(fill = '#EFF0F1',colour=NA))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
   theme(text = element_text(size=13)) +
   theme(axis.title.x = element_text(color="#505050")) +
@@ -63,7 +63,7 @@ ggplot(data = ucpSum, aes(x = ward, y = pharmacyVaccine)) +
        title="Vaccine options vary dramatically by ward",
        subtitle="Number of pharmacies administering vaccines by ward",
        caption="\nSource: DC Open Data, DataLensDC")
-ggsave("/Users/katerabinowitz/Documents/DataLensDC/Website/DataLensDCsite/Images/pharmVac.png")
+ggsave("/Users/katerabinowitz/Documents/DataLensDC/Website/DataLensDCsite/Images/pharmVac.png",width=6, height=5,dpi=100)
 
 ggplot(data = ucpSum, aes(x = ward, y = pharmacy)) + 
   geom_bar(stat="identity", colour="#38c7c7",fill="#38c7c7") + 
@@ -71,7 +71,7 @@ ggplot(data = ucpSum, aes(x = ward, y = pharmacy)) +
   scale_x_discrete(expand=c(0,0)) +
   theme(axis.text.x = element_text()) +
   theme(axis.text.y = element_text()) +
-  theme(plot.background = element_rect(fill = '#EFF0F1'))+
+  theme(plot.background = element_rect(fill = '#EFF0F1',colour=NA))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
   theme(text = element_text(size=13)) +
   theme(axis.title.x = element_text(color="#505050")) +
@@ -83,7 +83,7 @@ ggplot(data = ucpSum, aes(x = ward, y = pharmacy)) +
        title="Fewer Pharmacies East of the Anacostia",
        subtitle="Number of pharmacies by ward",
        caption="\nSource: DC Department of Health, DataLensDC")
-ggsave("/Users/katerabinowitz/Documents/DataLensDC/Website/DataLensDCsite/Images/pharm.png")
+ggsave("/Users/katerabinowitz/Documents/DataLensDC/Website/DataLensDCsite/Images/pharm.png",width=6, height=5,dpi=100)
 
 ggplot(data = ucpSum, aes(x = ward, y = ucrClinic)) + 
   geom_bar(stat="identity", colour="#38c7c7",fill="#38c7c7") +
@@ -97,7 +97,7 @@ ggplot(data = ucpSum, aes(x = ward, y = ucrClinic)) +
   theme(legend.text=element_text(color="#505050")) +  
   theme(axis.text.x = element_text()) +
   theme(axis.text.y = element_text()) +
-  theme(plot.background = element_rect(fill = '#EFF0F1'))+
+  theme(plot.background = element_rect(fill = '#EFF0F1',colour=NA))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
   theme(text = element_text(size=13)) +
   theme(axis.title.x = element_text(color="#505050")) +
@@ -109,4 +109,4 @@ ggplot(data = ucpSum, aes(x = ward, y = ucrClinic)) +
        title="Uneven Growth of Urgent Care and Retail Clinics in DC",
        subtitle="Number of urgent care and retail clinics by ward",
        caption="\nSource: DataLensDC, urgentcarelocations.com")
-ggsave("/Users/katerabinowitz/Documents/DataLensDC/Website/DataLensDCsite/Images/urgentRetailCare.png")
+ggsave("/Users/katerabinowitz/Documents/DataLensDC/Website/DataLensDCsite/Images/urgentRetailCare.png",width=6, height=4,dpi=100)
