@@ -3,6 +3,14 @@ Data analysis + visualization related to health in DC for [DataLensDC](www.datal
 
 ##### Topics:
 
+##### Wealth-Health-Gap (folder)
+Rates of health indicators by poorest and wealthiest DC residents
+
+Data Source: [500 Cities](https://chronicdata.cdc.gov/health-area/500-cities), [American Community Survey](https://www.census.gov/programs-surveys/acs/)
+
+Result: http://www.datalensdc.com/healthWealthGap.html
+
+
 ##### Urgent Care + Pharmacies (folder)
 Geographic distribution of urgent care clinics, pharmacies, and vaccine locations
 
